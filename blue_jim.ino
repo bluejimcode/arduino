@@ -36,7 +36,7 @@ if (Serial.available())
      Serial.print("Dato recibido:");
      Serial.println(dato);
      
-      if(da-to=='1')
+      if(dato=='1')
       { atras();
  
       }
