@@ -1,4 +1,4 @@
-//use it on Arduino nano*
+//download and use it on Arduino nano*
 
 const int PWMA = 4;
 const int AIN1 = 5;
