@@ -9,7 +9,7 @@ const int BIN1 = 11;
 const int BIN2 = 10;
 
 
-char dato; 
+char data; 
 
 void setup()
 {
@@ -32,32 +32,32 @@ void loop()
 {
 if (Serial.available())
     {
-    char dato=Serial.read();
-     Serial.print("Dato recibido:");
-     Serial.println(dato);
+    char data=Serial.read();
+     Serial.print("Data received");
+     Serial.println(data);
      
-      if(dato=='1')
-      { atras();
+      if(data=='1')
+      { back();
  
       }
       
-      if(dato=='2')
-      { avanza();
+      if(data=='2')
+      { go();
       
       }
                   
-      if(dato=='3')
-      { izquierda();
+      if(data=='3')
+      { left();
      
       }
       
-      if(dato=='4')
-      { derecha();
+      if(data=='4')
+      { right();
      
       }
       
-      if(dato=='a')
-      { paro();
+      if(data=='a')
+      { stop();
       
       }
 
@@ -65,7 +65,7 @@ if (Serial.available())
 
 }
 
- void atras(){
+ void back(){
   digitalWrite(PWMA, HIGH);
   digitalWrite(PWMB, HIGH);
   digitalWrite(AIN1,HIGH);
@@ -76,18 +76,18 @@ if (Serial.available())
   
   }
   
- void avanza(){
+ void go(){
   digitalWrite(PWMA, HIGH);
   digitalWrite(PWMB, HIGH);
   digitalWrite(AIN1,LOW);
   digitalWrite(AIN2,HIGH);
   digitalWrite(BIN1,LOW);
   digitalWrite(BIN2,HIGH);
-  Serial.println("avanza");
+  Serial.println("GO");
   Serial.println(digitalRead(PWMB));
   }
   
- void derecha(){
+ void right(){
    digitalWrite(PWMA, HIGH);
   digitalWrite(PWMB, HIGH);
   digitalWrite(AIN1,LOW);
@@ -97,7 +97,7 @@ if (Serial.available())
   
   }
   
- void izquierda(){
+ void left(){
    digitalWrite(PWMA, HIGH);
   digitalWrite(PWMB, HIGH);
   digitalWrite(AIN1,HIGH);
@@ -107,13 +107,13 @@ if (Serial.available())
   
   }
   
- void paro(){
+ void stop(){
   digitalWrite(AIN1,LOW);
   digitalWrite(AIN2,LOW);
   digitalWrite(BIN1,LOW);
   digitalWrite(BIN2,LOW);
   digitalWrite(PWMA, HIGH);
   digitalWrite(PWMB, HIGH);
-  Serial.println("detener");
+  Serial.println("STOP");
   Serial.println(digitalRead(PWMB));
   }
